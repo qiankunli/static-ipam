@@ -1,0 +1,18 @@
+.settings/
+
+# Generic ignore stuff
+.vagrant/*
+*.komodoproject
+.DS_Store
+._*
+.svn
+.hg
+.*.swp
+.buildpath
+.project
+logs/
+/.idea/
+buildtmp
+static-ipam
+static-ipam.log
+*.exe
