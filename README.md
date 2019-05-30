@@ -13,6 +13,22 @@ copy from [CNI static ipam plugin](https://github.com/containernetworking/plugin
 
 ### set kubeconfig in k8s.go
 
+
+    const kubeconfig  = `
+    set your own kubeconfig
+    `
+    func NewClient() (*kubernetes.Clientset, error) {
+        //kubeconfig, err := ioutil.ReadFile("./kube-config")
+        //if err != nil {
+        //	return nil, err
+        //}
+        restConf, err := clientcmd.RESTConfigFromKubeConfig([]byte(kubeconfig))
+        if err != nil {
+            return nil, err
+        }
+        return kubernetes.NewForConfig(restConf)
+    }
+
 ### k8s 网络配置 `/etc/cni/net.d/network.json`
 
 
